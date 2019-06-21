@@ -1,10 +1,20 @@
 import React from 'react';
 import './App.css';
+// 引入按钮组件
+import { Button, WhiteSpace, WingBlank } from 'antd-mobile';
+
 
 function App() {
   return (
     <div className="App">
-      这是一个react项目
+      <Button>default</Button><WhiteSpace />
+      <Button disabled>default disabled</Button><WhiteSpace />
+
+      <Button type="primary">primary</Button><WhiteSpace />
+      <Button type="primary" disabled>primary disabled</Button><WhiteSpace />
+
+      <Button type="warning">warning</Button><WhiteSpace />
+      <Button type="warning" disabled>warning disabled</Button><WhiteSpace />
     </div>
   );
 }
