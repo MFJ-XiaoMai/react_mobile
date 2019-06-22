@@ -1,22 +1,16 @@
-import React from 'react';
-import './App.css';
-// 引入按钮组件
-import { Button, WhiteSpace, WingBlank } from 'antd-mobile';
+import React,{ Fragment} from 'react';
+import './styles/App.css';
+import MyLayout from "./components/MyLayout.js";
 
 
-function App() {
-  return (
-    <div className="App">
-      <Button>default</Button><WhiteSpace />
-      <Button disabled>default disabled</Button><WhiteSpace />
-
-      <Button type="primary">primary</Button><WhiteSpace />
-      <Button type="primary" disabled>primary disabled</Button><WhiteSpace />
-
-      <Button type="warning">warning</Button><WhiteSpace />
-      <Button type="warning" disabled>warning disabled</Button><WhiteSpace />
-    </div>
-  );
+class App extends React.Component {
+  render(){
+    return(
+      <Fragment>
+        <MyLayout/>
+      </Fragment>
+    )
+  }
 }
-
+ 
 export default App;
