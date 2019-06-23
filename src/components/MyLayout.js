@@ -1,19 +1,15 @@
 import React, { Fragment }  from 'react';
 
 import { TabBar } from 'antd-mobile';
-import Home from '../pages/Home';
-import Cart from '../pages/Cart';
-import Mine from '../pages/Mine';
+// import Home from '../pages/Home';
+// import Cart from '../pages/Cart';
+// import Mine from '../pages/Mine';
 
 
 class MyLayout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedTab: 'redTab',
-      hidden: false,
-      fullScreen: false,
-    };
+    
   }
 
   renderContent(pageText) {
@@ -46,7 +42,7 @@ class MyLayout extends React.Component {
 
   render() {
     // 1. 首先在render里面打印this.props
-    console.log(this.props);
+    // console.log(this.props);
     return (
       // 全屏显示
       <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
@@ -59,7 +55,7 @@ class MyLayout extends React.Component {
           unselectedTintColor="#949494"
           tintColor="#33A3F4"
           barTintColor="white"
-          hidden={this.state.hidden}
+          
         >
           <TabBar.Item
             title="首页"
@@ -76,7 +72,9 @@ class MyLayout extends React.Component {
             data-seed="logId"
           >
             {/* 插槽 动态获取该组件的内容 */}
-            {this.props.children}
+            {/* {this.props.children} */}
+            {/* 要让url上的路径为/时，item里面的children才开始渲染，否则会反复触发 */}
+            {this.props.match.url === '/'?this.props.children:null}
           </TabBar.Item>
           <TabBar.Item
             icon={<span className='iconfont icon-gouwuche' />}
@@ -93,7 +91,8 @@ class MyLayout extends React.Component {
             data-seed="logId1"
           >
             {/* 插槽 */}
-            {this.props.children}
+            {/* {this.props.children} */}
+            {this.props.match.url === '/Cart' ? this.props.children : null}
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -111,7 +110,8 @@ class MyLayout extends React.Component {
             onPress={() => {this.props.history.push('/Mine')}}
           >
             {/* 插槽 */}
-            {this.props.children}
+            {/* {this.props.children} */}
+            {this.props.match.url === '/Mine' ? this.props.children : null}
           </TabBar.Item>
         </TabBar>
       </div>

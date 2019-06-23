@@ -2,7 +2,7 @@ import React,{ Fragment} from 'react';
 import './styles/App.css';
 import MyLayout from "./components/MyLayout.js";
 // 导入路由组件
-import { HashRouter as Router,Link,Route} from "react-router-dom";
+import { HashRouter as Router,Route} from "react-router-dom";
 // 导入页面组件
 import Home from './pages/Home';
 import Cart from './pages/Cart';
